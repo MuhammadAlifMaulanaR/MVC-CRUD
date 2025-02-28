@@ -1,7 +1,7 @@
 </div>
 </div>
 </div>
-<script src="<?= BASEURL ?>/assets/js/sidebar.js"></script>
+<script src="<?= BASEURL ?>/public/js/sidebar.js"></script>
 
 <!-- Button trigger modal -->
 

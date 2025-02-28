@@ -1,71 +1,71 @@
-<div style="padding-right: 60%; margin-left: 50px; margin-top: 80px;">
-    <button type="button" class="btn btn-outline-success btn-lg mb-2 tambah-button" data-bs-toggle="modal" data-bs-target="#addMahasiswa">Tambah</button>
+<link rel="stylesheet" href="<?= BASEURL ?>/public/css/home.css">
+<nav class="navbar bg-light">
+    <div class="container-fluid" style="">
+        <form class="d-flex ms-auto">
+            <div class="d-flex flex-column">
+                <a class="navbar-brand">muhalif.maulana17@gmail.com</a>
+                <a class="navbar-brand ms-auto" style="font-size: 0.9rem;">Alif</a>
+            </div>
+            <img src="<?= BASEURL ?>/public/img/user-icon.png" alt="Profile" width="50" height="50">
+        </form>
+    </div>
+</nav>
 
-    <table class="table border-dark" style="border-collapse: collapse;" border="1">
-        <thead class="table-dark">
-            <th scope="col">No</th>
-            <th scope="col">Name</th>
-            <th scope="col">Jurusan</th>
-            <th scope="col" colspan="2">Action</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <!-- Looping data mahasiswa -->
-            <?php if (!empty($data['mahasiswa'])): ?>
-                <?php foreach ($data['mahasiswa'] as $index => $mahasiswa): ?>
-                    <tr>
-                        <td><?= $index + 1 ?></td>
-                        <td><?= $mahasiswa['name'] ?></td>
-                        <td><?= $mahasiswa['jurusan'] ?></td>
-                        <td>
-                            <button type="button" class="btn btn-primary edit-button" data-id="<?= $mahasiswa['id']; ?>" data-bs-toggle="modal" data-bs-target="#addMahasiswa">
-                                EDIT
-                            </button>
-                        </td>
-                        <td>
-                            <form action="<?= BASEURL; ?>/Home/hapus/<?= $mahasiswa['id']; ?>" method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
-                                <button type="submit" class="btn btn-danger">HAPUS</button>
-                            </form>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="3">Belum ada data mahasiswa.</td>
-                </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
-
-
-    <!-- modal add -->
-    <div class="modal fade" id="addMahasiswa" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="ubah-title">Tambah Mahasiswa</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="overflow-y-auto" style="max-height: 95vh; overflow-x: hidden; margin-top: 20px;">
+    <div class="row px-3">
+        <div class="col-lg-3 p-2">
+            <div class="card p-3 bg-light text-body-secondary">
+                <div class="row">
+                    <div class="col-7 card-body">
+                        <h6 class="card-subtitle mb-2">Akun User</h6>
+                        <!-- <h2 class="card-title"><?= $data['user']['jumlahUser'] ?></h2> -->
+                        <p class="card-text">Jumlah</p>
+                    </div>
+                    <div class="col-5 align-self-center">
+                        <img src="<?= BASEURL ?>/public/img/user-management.png" alt="foto-card4" width="80px">
+                    </div>
                 </div>
-
-                <div class="modal-body">
-
-                    <form id="mahasiswa-form" action="<?= BASEURL ?>/Home/prosesTambah" method="POST">
-                        <input type="hidden" name="id" id="hidden-id">
-                        <div class="mb-3  ps-5" style="padding-right: 10%;">
-                            <label for="name" class="form-label">Nama:</label>
-                            <input type="text" class="form-control input-name" name="name" id="input-name" placeholder="Masukkan Nama">
-                        </div>
-                        <div class="mb-3 ps-5" style="padding-right: 10%;">
-                            <label for="jurusan" class="form-label">Jurusan:</label>
-                            <input type="text" name="jurusan" class="form-control input-jurusan" id="input-jurusan" placeholder="Masukkan Jurusan" required>
-                        </div>
-
+            </div>
+        </div>
+        <div class="col-lg-3 p-2">
+            <div class="card p-3 bg-light text-body-secondary">
+                <div class="row">
+                    <div class="col-7 card-body">
+                        <h6 class="card-subtitle mb-2">Mahasiswa</h6>
+                        <!-- <h2 class="card-title"><?= $data['mahasiswa']['jumlahMahasiswa'] ?></h2> -->
+                        <p class="card-text">Jumlah</p>
+                    </div>
+                    <div class="col-5 align-self-center">
+                        <img src="<?= BASEURL ?>/public/img/data-mahasiswa.png" alt="foto-card4" width="80px">
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-outline-success" name="submit" id="submit-button">Tambah</button>
-                    </form>
+            </div>
+        </div>
+        <div class="col-lg-3 p-2">
+            <div class="card p-3 bg-light text-body-secondary">
+                <div class="row">
+                    <div class="col-7 card-body">
+                        <h6 class="card-subtitle mb-2">Mata Kuliah</h6>
+                        <!-- <h2 class="card-title"><?= $data['matkul']['jumlahMatkul'] ?></h2> -->
+                        <p class="card-text">Jumlah</p>
+                    </div>
+                    <div class="col-5 align-self-center">
+                        <img src="<?= BASEURL ?>/public/img/matakuliah.png" alt="foto-card4" width="80px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 p-2">
+            <div class="card p-3 bg-light text-body-secondary">
+                <div class="row">
+                    <div class="col-7 card-body">
+                        <h6 class="card-subtitle mb-2">Pembayaran</h6>
+                        <!-- <h2 class="card-title"><?= $data['countpembayaran']['jumlahPembayaran'] ?></h2> -->
+                        <p class="card-text">Jumlah</p>
+                    </div>
+                    <div class="col-5 align-self-center">
+                        <img src="<?= BASEURL ?>/public/img/pembayaran.png" alt="foto-card4" width="80px">
+                    </div>
                 </div>
             </div>
         </div>
